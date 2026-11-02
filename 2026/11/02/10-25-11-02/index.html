@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>10.25~11.02 | 把我写给你看</title><meta name="author" content="懒大王"><meta name="copyright" content="懒大王"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 已完成模型的架构图的书写。 已经和师弟把相关的4个数据集给建立好了，后续做实验会方便很多。 龙哥那边的论文进行相关改写已经确定投稿的期刊了。 INS与NN和等等等期刊的审稿。  下周待完成 把相关模型的CBAR和示意图画一下。 准备开始论文的写作，闲暇时候也可以看看后面的与大模型文本结合这块。 AAAI的审稿完成一下。  随笔我的新拍子弓11pro，哈哈哈哈，很帅气。 影之刃零打击感很棒，是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10.25~11.02">
+<meta property="og:url" content="https://luyang-2023.github.io/My_Blog/2026/11/02/10-25-11-02/index.html">
+<meta property="og:site_name" content="把我写给你看">
+<meta property="og:description" content="前言 已完成模型的架构图的书写。 已经和师弟把相关的4个数据集给建立好了，后续做实验会方便很多。 龙哥那边的论文进行相关改写已经确定投稿的期刊了。 INS与NN和等等等期刊的审稿。  下周待完成 把相关模型的CBAR和示意图画一下。 准备开始论文的写作，闲暇时候也可以看看后面的与大模型文本结合这块。 AAAI的审稿完成一下。  随笔我的新拍子弓11pro，哈哈哈哈，很帅气。 影之刃零打击感很棒，是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg">
+<meta property="article:published_time" content="2026-11-02T02:30:13.000Z">
+<meta property="article:modified_time" content="2026-11-02T03:03:28.762Z">
+<meta property="article:author" content="懒大王">
+<meta property="article:tag" content="卢阳">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg"><link rel="shortcut icon" href="/My_Blog/images/LYY.png"><link rel="canonical" href="https://luyang-2023.github.io/My_Blog/2026/11/02/10-25-11-02/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/My_Blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/My_Blog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '10.25~11.02',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-11-02 11:03:28'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/My_Blog/images/LYY.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><a href="/My_Blog/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/My_Blog/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/My_Blog/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/My_Blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg);"><nav id="nav"><span id="blog-info"><a href="/My_Blog/" title="把我写给你看"><span class="site-name">把我写给你看</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/My_Blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/My_Blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">10.25~11.02</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-11-02T02:30:13.000Z" title="发表于 2026-11-02 10:30:13">2026-11-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-02T03:03:28.762Z" title="更新于 2026-11-02 11:03:28">2026-11-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="10.25~11.02"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>已完成模型的架构图的书写。</li>
+<li>已经和师弟把相关的4个数据集给建立好了，后续做实验会方便很多。</li>
+<li>龙哥那边的论文进行相关改写已经确定投稿的期刊了。</li>
+<li>INS与NN和等等等期刊的审稿。</li>
+</ul>
+<h1 id="下周待完成"><a href="#下周待完成" class="headerlink" title="下周待完成"></a>下周待完成</h1><ul>
+<li>把相关模型的CBAR和示意图画一下。</li>
+<li>准备开始论文的写作，闲暇时候也可以看看后面的与大模型文本结合这块。</li>
+<li>AAAI的审稿完成一下。</li>
+</ul>
+<h1 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h1><h2 id="我的新拍子"><a href="#我的新拍子" class="headerlink" title="我的新拍子"></a>我的新拍子</h2><p>弓11pro，哈哈哈哈，很帅气。<br><img src="https://i.postimg.cc/FzzydDsP/wei-xin-tu-pian-20261102100702-6-88.jpg"></p>
+<h2 id="影之刃零"><a href="#影之刃零" class="headerlink" title="影之刃零"></a>影之刃零</h2><p>打击感很棒，是个好玩的游戏的。<br><img src="https://i.postimg.cc/9MJPQvV7/wei-xin-tu-pian-20261102103313-19-88.jpg"></p>
+<h2 id="师弟的生日"><a href="#师弟的生日" class="headerlink" title="师弟的生日"></a>师弟的生日</h2><div class="gallery-container" data-type="data" data-button>
+      <div class="gallery-items">[{"url":"https://i.postimg.cc/TwCj3ZGG/wei-xin-tu-pian-20261102100721-10-88.jpg","alt":""},{"url":"https://i.postimg.cc/50n52Z1d/wei-xin-tu-pian-20261102100722-11-88.jpg","alt":""},{"url":"https://i.postimg.cc/FRDbH2m9/wei-xin-tu-pian-20261102100726-13-88.jpg","alt":""},{"url":"https://i.postimg.cc/pTqQLgxN/wei-xin-tu-pian-20261102100727-14-88.jpg","alt":""},{"url":"https://i.postimg.cc/V6D9k31s/wei-xin-tu-pian-20261102100729-15-88.jpg","alt":""},{"url":"https://i.postimg.cc/W3Xm1Qjz/wei-xin-tu-pian-20261102100731-16-88.jpg","alt":""},{"url":"https://i.postimg.cc/76m1ZpDg/wei-xin-tu-pian-20261102103350-21-88.jpg","alt":""},{"url":"https://i.postimg.cc/5yyBYnNz/wei-xin-tu-pian-20261102100656-2-88.jpg","alt":""},{"url":"https://i.postimg.cc/900dRJF4/wei-xin-tu-pian-20261102100655-1-88.jpg","alt":""}]</div>
+    </div>
+
+<h2 id="小小橘"><a href="#小小橘" class="headerlink" title="小小橘"></a>小小橘</h2><p>这个应该是小橘的孩子，小小的一只，很害羞的。<br><img src="https://i.postimg.cc/D00rJByQ/wei-xin-tu-pian-20261102100658-3-88.jpg"></p>
+<h2 id="好玩的图片"><a href="#好玩的图片" class="headerlink" title="好玩的图片"></a>好玩的图片</h2><div class="gallery-container" data-type="data" data-button>
+      <div class="gallery-items">[{"url":"https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg","alt":""},{"url":"https://i.postimg.cc/mkkYz82n/wei-xin-tu-pian-20261102100705-9-88.png","alt":""},{"url":"https://i.postimg.cc/3RnjxP7p/wei-xin-tu-pian-20261102103314-20-88.png","alt":""}]</div>
+    </div>
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://luyang-2023.github.io/My_Blog">懒大王</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://luyang-2023.github.io/My_Blog/2026/11/02/10-25-11-02/">https://luyang-2023.github.io/My_Blog/2026/11/02/10-25-11-02/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://luyang-2023.github.io/My_Blog" target="_blank">把我写给你看</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="prev-post pull-full" href="/My_Blog/2026/10/25/10-18-10-25/" title="10_18~10_25"><img class="cover" src="https://i.postimg.cc/Jz0KcG1S/wei-xin-tu-pian-20261025204716-735-21.jpg" onerror="onerror=null;src='/My_Blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">10_18~10_25</div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/My_Blog/images/LYY.png" onerror="this.onerror=null;this.src='/My_Blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">懒大王</div><div class="author-info-description">保持幻想，敢做敢当</div><div class="site-data"><a href="/My_Blog/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/My_Blog/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/My_Blog/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LuYang-2023"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/LuYang-2023" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:ly13063414158@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的个人博客！这里主要分享我的生活感悟、技术文章和个人兴趣，希望能够为你带来启发。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E5%91%A8%E5%BE%85%E5%AE%8C%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">下周待完成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%8F%E7%AC%94"><span class="toc-number">3.</span> <span class="toc-text">随笔</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E6%96%B0%E6%8B%8D%E5%AD%90"><span class="toc-number">3.1.</span> <span class="toc-text">我的新拍子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%B1%E4%B9%8B%E5%88%83%E9%9B%B6"><span class="toc-number">3.2.</span> <span class="toc-text">影之刃零</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%88%E5%BC%9F%E7%9A%84%E7%94%9F%E6%97%A5"><span class="toc-number">3.3.</span> <span class="toc-text">师弟的生日</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E5%B0%8F%E6%A9%98"><span class="toc-number">3.4.</span> <span class="toc-text">小小橘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9B%BE%E7%89%87"><span class="toc-number">3.5.</span> <span class="toc-text">好玩的图片</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/My_Blog/2026/11/02/10-25-11-02/" title="10.25~11.02"><img src="https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg" onerror="this.onerror=null;this.src='/My_Blog/img/404.jpg'" alt="10.25~11.02"/></a><div class="content"><a class="title" href="/My_Blog/2026/11/02/10-25-11-02/" title="10.25~11.02">10.25~11.02</a><time datetime="2026-11-02T02:30:13.000Z" title="发表于 2026-11-02 10:30:13">2026-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/My_Blog/2026/10/25/10-18-10-25/" title="10_18~10_25"><img src="https://i.postimg.cc/Jz0KcG1S/wei-xin-tu-pian-20261025204716-735-21.jpg" onerror="this.onerror=null;this.src='/My_Blog/img/404.jpg'" alt="10_18~10_25"/></a><div class="content"><a class="title" href="/My_Blog/2026/10/25/10-18-10-25/" title="10_18~10_25">10_18~10_25</a><time datetime="2026-10-25T13:08:30.000Z" title="发表于 2026-10-25 21:08:30">2026-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/My_Blog/2026/10/18/9-06-10-18/" title="9_06~10_18"><img src="https://i.postimg.cc/gcKnTpQn/wei-xin-tu-pian-20261018211049-664-21.jpg" onerror="this.onerror=null;this.src='/My_Blog/img/404.jpg'" alt="9_06~10_18"/></a><div class="content"><a class="title" href="/My_Blog/2026/10/18/9-06-10-18/" title="9_06~10_18">9_06~10_18</a><time datetime="2026-10-18T13:09:50.000Z" title="发表于 2026-10-18 21:09:50">2026-10-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/My_Blog/2026/09/06/5-07-9-06/" title="5_07~9_06"><img src="https://i.postimg.cc/prqgqmXq/wei-xin-tu-pian-20260906220050-601-21.jpg" onerror="this.onerror=null;this.src='/My_Blog/img/404.jpg'" alt="5_07~9_06"/></a><div class="content"><a class="title" href="/My_Blog/2026/09/06/5-07-9-06/" title="5_07~9_06">5_07~9_06</a><time datetime="2026-09-06T13:51:14.000Z" title="发表于 2026-09-06 21:51:14">2026-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/My_Blog/2026/05/07/4-26-5-07/" title="4.26~5.07"><img src="https://i.postimg.cc/1tJ3qTkY/wei-xin-tu-pian-20260507210948-454-21.jpg" onerror="this.onerror=null;this.src='/My_Blog/img/404.jpg'" alt="4.26~5.07"/></a><div class="content"><a class="title" href="/My_Blog/2026/05/07/4-26-5-07/" title="4.26~5.07">4.26~5.07</a><time datetime="2026-05-07T13:04:31.000Z" title="发表于 2026-05-07 21:04:31">2026-05-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://i.postimg.cc/GttF8qhF/wei-xin-tu-pian-20261102100659-4-88.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By 懒大王</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="luyang-2023.github.io/My_Blog/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/My_Blog/js/utils.js"></script><script src="/My_Blog/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
